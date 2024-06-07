@@ -85,12 +85,12 @@ window.addEventListener('scroll', function(){
 document.getElementById('setTimeoutBtn').addEventListener('click', function(){
     setTimeout(function(){
         alert('setTimeout: Acionado após um intervalo de tempo especificado.');
-    }, 2000);
+    }, 2000); // Em 2 Segundos abrirá um popup
 });
 
 document.getElementById('setIntervalBtn').addEventListener('click', function(){
     setInterval(function(){
         alert('setIntevalt: Acionado repetidamente em intervalos de tempo especificados.');
-    }, 3000);
+    }, 3000); // A cada 3 segundos irá aparecer um popup repetidamente
 });
 
