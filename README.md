@@ -1,1 +1,1 @@
-sending activities repository
+repository to send SENAC-RS activities
