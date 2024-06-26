@@ -1,0 +1,35 @@
+whats the name of your company? Dreams
+how many visitors do you get? 200.000 thousand for month
+where are your visitors from? Brazil
+how long do they spend on the site? 10 minutes
+
+-----------------------------------------
+
+to start, wake up early and get out of bed.
+first, brush my teeth and wash my face
+next, i hava a breakfast
+then, i work in my computer
+second, i leave my house to plat volleyball
+after that, i take a shower and put my clothes to go to university
+thirdly, i go to my house and take another shower
+to finish, i have a dinner and go to sleep
+
+----------------------------------------
+
+1) First
+2) Secondly
+3) Thirdly
+4) Next
+5) Then
+6) After that
+7) Finally
+
+----------------------------------------
+
+1) talk to customer
+2) analyze information
+3) create specification
+4) desing and develop
+5) write content
+6) code website
+7) publish and maintain
