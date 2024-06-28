@@ -52,9 +52,7 @@ function visualizeSchool() {
 }
 
 function mainMenu() {
-    let running = true;
-
-    while (running) {
+    while() {
         console.log("\nMenu Principal:");
         console.log("1. Criar Professor");
         console.log("2. Criar Escola");
@@ -86,13 +84,12 @@ function mainMenu() {
                 visualizeSchool();
                 break;
             case '7':
-                running = false;
                 console.log("Saindo...");
                 break;
             default:
                 console.log("Opção inválida! Por favor, escolha uma opção válida.");
                 break;
-        }
+        }   
     }
 }
 

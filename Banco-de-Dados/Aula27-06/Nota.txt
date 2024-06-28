@@ -1,0 +1,8 @@
+CREATE DATABASE Store;
+	USE Store;
+
+	CREATE TABLE clients {
+	id_clients INT PRIMARY KEY
+	name VARCHAR(100)
+	email VARCHAR(100)
+       };
