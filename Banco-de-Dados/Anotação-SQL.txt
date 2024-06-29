@@ -1,29 +1,109 @@
-CREATE DATABASE IF NOT EXISTS loja;
+CREATE DATABASE IF NOT EXISTS lojaLeo;
 
-USE loja 
+USE lojaLeo;
 
 CREATE TABLE IF NOT EXISTS clientes (
-        id_cliente INT PRIMARY KEY
-        nome VARCHAR(100),
-        email VARCHAR(100)
+    id_cliente INT PRIMARY KEY,
+    nome VARCHAR(100),
+    email VARCHAR(100)
 );
 
 CREATE TABLE IF NOT EXISTS pedidos (
     id_pedido INT PRIMARY KEY,
-    descricao VARCHAR(100),
-    valor DECIMAL(10,2),
+    descricao VARCHAR(200),
+    valor DECIMAL(10, 2),
     id_cliente INT,
-    FOREIGN KEY (id_cliente) REFERENCES clientes (id_cliente)
+    FOREIGN KEY (id_cliente) REFERENCES clientes(id_cliente)
 );
 
 
+-- Inserindo valores na tabela clientes com INSERT IGNORE INTO
 INSERT IGNORE INTO clientes (id_cliente, nome, email) VALUES
-(1,'João Clieton Silva Oliveira Passos','joaozinho666@example.com'),
-(2,'Mario Python','ticomiatrasdoarmario@example.com'),
-(3,'J.J Santos','santojames777@example.com');
+(1, 'João Silva', 'joao@example.com'),
+(2, 'Maria Oliveira', 'maria@example.com'),
+(3, 'Pedro Santos', 'pedro@example.com');
 
-
-INSERT IGNORE INTO produtos (id_pedido, descricao, valor, id_cliente) VALUES
+-- Inserindo valores na tabela pedidos com INSERT IGNORE INTO
+INSERT IGNORE INTO pedidos (id_pedido, descricao, valor, id_cliente) VALUES
 (101, 'Compra de móveis', 1500.00, 1),
-(102, 'Pedido de eletronicos', 2500.00, 2),
-(103, 'Servicos de instalações', 500.75, 3);
+(102, 'Pedido de eletrônicos', 2500.50, 2),
+(103, 'Serviços de instalação', 500.75, 3);
+
+CREATE TABLE IF NOT EXISTS products (
+        id_product INT PRIMARY KEY
+        product_name VARCHAR(100),
+        unit_price DECIMAL(10, 2)
+);
+
+itens do pedidos
+id do itens do pedido primary KEY
+id do pedido chave estrangeira
+id do produto chave estrangeira
+quantidade
+preço unitario
+
+USE GustavoStore;
+
+CREATE TABLE IF NOT EXISTS products (
+        id_product INT PRIMARY KEY,
+        product_name VARCHAR(100),
+        unit_price DECIMAL(10, 2)
+);
+
+CREATE TABLE IF NOT EXISTS order_itens (
+		id_order_itens INT PRIMARY KEY,
+    	amount INT,
+    	id_request INT,
+    	id_product INT,
+    	unit_price DECIMAL (10,2),
+    	FOREIGN KEY (id_request) REFERENCES request (id_request),
+    	FOREIGN KEY (id_request) REFERENCES request (id_request)
+);
+
+USE GustavoStore;
+
+CREATE TABLE IF NOT EXISTS payment (
+		id_payment INT PRIMARY KEY,
+       	id_request INT,
+    	payment_method VARCHAR (100),
+    	amount DECIMAL (10,2),
+    	payday DATE,
+    	FOREIGN KEY (id_request) REFERENCES request (id_request)
+);
+
+USE GustavoStore;
+
+INSERT IGNORE INTO order_itens (amount, id_order_itens, id_product, id_request, unit_price) VALUES
+(5, 1002, 1002, 1002, 1600.00),
+(6, 1003, 1003, 1003, 1600.00),
+(7, 1004, 1004, 1004, 1600.00);
+
+INSERT IGNORE INTO products (id_product, product_name, unit_price) VALUES
+(1005, 'Estante', 1500.00),
+(1006, 'Geladeira', 2000.00),
+(1007, 'Porta', 500.00);
+
+INSERT IGNORE INTO payment (amount, id_payment, id_request, payday, payment_method) VALUES
+(2, 456, 122, 2024-03-20, 'Pix'),
+(1, 457, 123, 2024-06-22, 'Cartão Débito'),
+(3, 457, 121, 2024-08-12, 'Cartão Crédito');
+
+RENAME TABLE clients TO store_clients  ----renomear o nome da tabela
+
+ALTER TABLE payment (nome da tabela)
+CHANGE payday pay_day DATE; (nome da coluna, nome novo da coluna, tipo de dado da coluna) ----renomear o nome da coluna
+
+ALTER TABLE store_clients   ----adicionar uma coluna 
+ADD COLUMN cellphone VARCHAR(15);
+
+---inserir valores nas novas colunas criadas
+UPDATE nome da coluna
+SET nome da coluna = valor
+WHERE condição;
+---------------------------
+UPDATE store_clients
+SET cellphone = 51983322820
+WHERE id_clients = 4
+
+
+AUTO_INCREMENT
