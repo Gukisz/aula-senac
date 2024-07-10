@@ -7,13 +7,13 @@ export class Car {
         this.fuelLevel = 0;
     }
 
-    walk(distance: number): void {
+    walk(distance: number): boolean {
         const fuelRequired = distance / this.consume;
         if (fuelRequired <= this.fuelLevel) {
             this.fuelLevel -= fuelRequired;
-        } else {
-            throw new Error("Combustível insuficiente para percorrer a distância desejada.");
+            return true;
         }
+        return false;
     }
 
     getFuel(): number {

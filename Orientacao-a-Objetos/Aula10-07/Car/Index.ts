@@ -1,7 +1,6 @@
 import { Car } from './Car';
 import * as readlineSync from 'readline-sync';
 
-
 // Função para criar e retornar um Carro
 function chooseCar(cars: Car[]): Car {
     console.log('Escolha um carro:');
@@ -34,12 +33,10 @@ const gasolineAmount = parseFloat(readlineSync.question('Digite a quantidade de 
 chosenCar.addFuel(gasolineAmount);
 console.log(`Nível de combustível atual: ${chosenCar.getFuel()} L`);
 
-//Usando o Try para capturar o erro e usando o Catch para tratar esse erro
 const distance = parseFloat(readlineSync.question('Digite a distância que deseja percorrer (em km): '));
-try {
-    chosenCar.walk(distance);
-    console.log(`Nível de combustível após andar ${distance} km: ${chosenCar.getFuel()} L`);
-} catch (error) {
-    console.error(error.message);
-}
 
+if (chosenCar.walk(distance)) {
+    console.log(`Nível de combustível após andar ${distance} km: ${chosenCar.getFuel()} L`);
+} else {
+    console.error("Combustível insuficiente para percorrer a distância desejada.");
+}
