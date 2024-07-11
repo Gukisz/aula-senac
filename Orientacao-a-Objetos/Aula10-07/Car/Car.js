@@ -10,10 +10,9 @@ var Car = /** @class */ (function () {
         var fuelRequired = distance / this.consume;
         if (fuelRequired <= this.fuelLevel) {
             this.fuelLevel -= fuelRequired;
+            return true;
         }
-        else {
-            throw new Error("Combustível insuficiente para percorrer a distância desejada.");
-        }
+        return false;
     };
     Car.prototype.getFuel = function () {
         return this.fuelLevel;

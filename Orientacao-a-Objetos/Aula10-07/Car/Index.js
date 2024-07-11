@@ -29,12 +29,10 @@ console.log("Consumo do carro escolhido: ".concat(chosenCar.consume, " km/L"));
 var gasolineAmount = parseFloat(readlineSync.question('Digite a quantidade de gasolina a adicionar (em litros): '));
 chosenCar.addFuel(gasolineAmount);
 console.log("N\u00EDvel de combust\u00EDvel atual: ".concat(chosenCar.getFuel(), " L"));
-//Usando o Try para capturar o erro e usando o Catch para tratar esse erro
 var distance = parseFloat(readlineSync.question('Digite a distância que deseja percorrer (em km): '));
-try {
-    chosenCar.walk(distance);
+if (chosenCar.walk(distance)) {
     console.log("N\u00EDvel de combust\u00EDvel ap\u00F3s andar ".concat(distance, " km: ").concat(chosenCar.getFuel(), " L"));
 }
-catch (error) {
-    console.error(error.message);
+else {
+    console.error("Combustível insuficiente para percorrer a distância desejada.");
 }

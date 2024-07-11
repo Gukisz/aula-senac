@@ -34,7 +34,6 @@ chosenCar.addFuel(gasolineAmount);
 console.log(`Nível de combustível atual: ${chosenCar.getFuel()} L`);
 
 const distance = parseFloat(readlineSync.question('Digite a distância que deseja percorrer (em km): '));
-
 if (chosenCar.walk(distance)) {
     console.log(`Nível de combustível após andar ${distance} km: ${chosenCar.getFuel()} L`);
 } else {
