@@ -29,6 +29,8 @@ export class Person {
         const today = new Date();
         const age = today.getFullYear() - this.birthDate.getFullYear();
         const month = today.getMonth() - this.birthDate.getMonth();
+        
+        //Verificar se a pessoa já fez aniversário este ano
         if (month < 0 || (month === 0 && today.getDate() < this.birthDate.getDate())) {
             return age - 1;
         }

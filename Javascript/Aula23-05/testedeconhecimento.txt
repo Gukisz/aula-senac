@@ -1,0 +1,293 @@
+Javascript é a mesma coisa que Java.
+b) Falso
+
+Como se declara uma variável em Javascript?
+a) const carName
+
+Que operador é usado para dar valor a uma variável?
+a) =
+
+Diga o que a seguinte equação retorna: 10 > 9
+b) true
+
+Javascript é case-sensitive (que diferencia maiúsculas de minúsculas)?
+a) Sim
+
+Como se cria uma função em Javascript?
+a) function myFunction()
+
+Como se invoca uma função chamada "myFunction"?
+c) myFunction()
+
+Como se escreve o condicional IF em Javascript?
+a) if(i===5)
+
+Como escrever o condicional IF para executar um código se "i" não for igual a 5?
+b) if (i != 5)
+
+Como um WHILE começa?
+b) while (i <= 10)
+
+Como um LOOP FOR começa?
+d) for (i=0;i<=5;i++)
+
+Como se adiciona um comentário em Javascript?
+b) //Este é um comentário
+
+Como adicionar um comentário com mais de uma linha?
+a) /Este comentário tem mais de uma linha/
+
+Qual é a maneira correta de escrever um array?
+a) const colors = ['red','green','blue']
+
+Usando um comando em Javascript, como você arredondaria o número 7.25?
+Math.round(7.25)
+
+Variáveis:
+
+Qual é a maneira correta de nomear uma variável?
+e) myName
+
+Qual o valor de uma variável que está vazia?
+b) undefined
+
+Crie uma variável chamada carName e atribua o valor "Maverick" a ela:
+let carName = "Maverick";
+
+Criar uma variável chamada x e atribua o valor 50 a ela:
+let x = 50;
+
+Exiba a soma de 5 + 10 usando duas variáveis x e y:
+let x = 5;
+let y = 10;
+console.log(x + y); // Isso exibirá 15
+
+Complete o código criando uma variável chamada z, atribuia x + y a ela e exiba o resultado:
+let z = x + y;
+console.log(z); // Isso exibirá 15
+
+Declare estas três variáveis em UMA ÚNICA LINHA com estes nomes e valores específicos:
+let firstName = "John", lastName = "Doe", age = 35;
+
+Operadores:
+
+Multiplique 10 por 5 e exiba o resultado.
+let result = 10 * 5;
+console.log(result); // Isso exibirá 50
+
+Exiba o resto da divisão de 15 por 9.
+let remainder = 15 % 9;
+console.log(remainder); // Isso exibirá 6
+
+Use o operador de atribuição correto para fazer x ser igual a 15 (o mesmo que escrever x = x + y).
+let x = 10;
+let y = 5;
+x += y; // Isso é o mesmo que x = x + y
+console.log(x); // Isso exibirá 15
+
+Usa o operador de atribuição correto para fazer x ser igual a 50 (o mesmo que escrever x = x * y).
+x = 10;
+y = 5;
+x *= y; // Isso é o mesmo que x = x * y
+console.log(x); // Isso exibirá 50
+
+Tipos de Dados:
+Use comentários para descrever o tipo correto de cada uma das variáveis abaixo:
+
+let length = 16; // Number
+let lastName = "Johnson"; // String
+const person = { // Object
+  firstName: "John", // String
+  lastName: "Doe" // String
+};
+
+Funções:
+
+Execute a função chamada myFunction:
+function myFunction() {
+  alert("Hello World!");
+}
+myFunction();
+
+Complete o código, criando uma função chamada myFunction:
+function myFunction() {
+  console.log("Hello World");
+}
+myFunction();
+
+Complete o código, fazendo com que a função RETORNE a palavra "Hello":
+function myFunction() {
+  return "Hello";
+}
+
+console.log(myFunction(), "World");
+
+Objetos:
+
+Mostre a informação "John"em um console.log, extraindo essa informação do objeto:
+const person = {
+  firstName: "John",
+  lastName: "Doe"
+};
+console.log(person.firstName); 
+
+Adicione a seguinte propriedade e valor ao objeto person: country: Norway.
+const person = {
+  firstName: "John",
+  lastName: "Doe"
+};
+
+person.country = "Norway";
+
+console.log(person);
+
+Crie um objeto chamado person com name = John e age = 50.
+Em seguida, acesse o objeto para exibir a mensagem "John tem 50 anos.".
+const person = {
+  name: "John",
+  age: 50
+};
+
+console.log(`${person.name} tem ${person.age} anos.`);
+
+Strings:
+
+Complete o o código usando a propriedade correta para exibir o comprimento de txt:
+let txt = "Hello World!";
+let x = txt.length;
+console.log(x); 
+
+Concatene as duas strings para exibir a mensagem "Hello World!":
+let str1 = "Hello ";
+let str2 = "World!";
+let message = str1 + str2;
+console.log(message); // Isso exibirá "Hello World!"
+
+Converta o texto para um texto EM MAIÚSCULAS:
+let txt = "Hello World!";
+let upperTxt = txt.toUpperCase();
+console.log(upperTxt);
+
+Use o método correto de String para substituir a palavra "Hello" pela palavra "Welcome".
+let txt = "Hello World";
+let newTxt = txt.replace("Hello", "Welcome");
+console.log(newTxt); 
+
+Arrays:
+
+Mostre o valor "Volvo" do array "cars":
+const cars = ["Saab", "Volvo", "BMW"];
+console.log(cars[1]); 
+
+Mude o primeiro item de "cars" para "Ford":
+const cars = ["Saab", "Volvo", "BMW"];
+cars[0] = "Ford";
+console.log(cars); 
+
+Mostre o número de itens que há no array usando a propriedade certa:
+const cars = ["Volvo", "Jeep", "Mercedes"];
+console.log(cars.length);
+
+Use o método correto de Array para remover o último item do array fruits.
+const fruits = ["Banana", "Orange", "Apple"];
+fruits.pop();
+console.log(fruits); 
+
+Use o método correto de Array para adicionar "Kiwi" ao array fruits.
+const fruits = ["Banana", "Orange", "Apple"];
+fruits.push("Kiwi");
+console.log(fruits); 
+
+Use o método splice() para remover "Orange" e "Apple" do array fruits.
+const fruits = ["Banana", "Orange", "Apple"];
+fruits.splice(1, 2);
+console.log(fruits); 
+
+Comparadores:
+
+Escolha o operador de comparação correto para mostrar verdadeiro quando x for maior que y.
+let x = 10;
+let y = 5;
+console.log(x > y); // Isso exibirá true
+
+Escolha o operador de comparação correto para alertar verdadeiro quando x for igual a y.
+let x = 10;
+let y = 5;
+console.log(x == y); // Isso exibirá false
+
+Escolha o operador de comparação correto para alertar verdadeiro quando x não for igual a y.
+let x = 10;
+let y = 5;
+console.log(x != y); // Isso exibirá true
+
+Condicionais:
+
+Crie um código para mostrar "Hello World" se x for maior que y:
+let x = 10;
+let y = 5;
+
+if (x > y) {
+    console.log("Hello World");
+}
+
+Crie um código para mostrar "Hello World" se x for maior que y,e se não for, imprima "Goodbye":
+let x = 10;
+let y = 5;
+
+if (x > y) {
+    console.log("Hello World");
+} else {
+    console.log("Goodbye");
+}
+
+Switch:
+
+Crie uma declaração switch que irá mostrar "Olá" se fruits for "banana" e "Bem-vindo" se fruits for "maçã".
+Adicione uma seção que irá alertar "Nem um nem outro" se fruits não for nem "banana" nem "maçã".
+
+let fruits = "banana";
+
+switch (fruits) {
+    case "banana":
+        console.log("Olá");
+        break;
+    case "maçã":
+        console.log("Bem-vindo");
+        break;
+    default:
+        console.log("Nem um nem outro");
+}
+
+Loop For:
+
+Crie um loop for que conte de 0 até 9.
+for (let i = 0; i < 10; i++) {
+    console.log(i);
+}
+
+Crie um loop for que percorra todos os itens do array:
+const fruits = ["Apple", "Banana", "Orange"];
+const fruits = ["Apple", "Banana", "Orange"];
+
+for (let i = 0; i < fruits.length; i++) {
+    console.log(fruits[i]);
+}
+
+Loop While:
+
+Crie um loop que continua executando enquanto i for menor que 10.
+let i = 0;
+
+while (i < 10) {
+    console.log(i);
+    i++;
+}
+
+Crie um loop que continua executando enquanto i for menor que 10, mas incremente i com 2 a cada vez.
+let i = 0;
+
+while (i < 10) {
+    console.log(i);
+    i += 2;
+}
+
