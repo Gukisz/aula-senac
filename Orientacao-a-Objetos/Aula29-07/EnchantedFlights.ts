@@ -59,13 +59,13 @@ class Flight {
     clone(): Flight {
         const clonedFlight = new Flight(this.numeroVoo, this.data);
         clonedFlight.seats = [...this.seats];
-        return clonedFlight;
+        return clonedFlight;        
     }
 }
 
 // Example usage
-const flightDate = new Data(2024, 10, 21, 15, 30);
-const flight = new Flight("MG1234", flightDate);
+const flightDate = new Data(2024, 31, 7, 17, 30);
+const flight = new Flight("A319", flightDate);
 
 console.log(flight.nextFree());  
 console.log(flight.occupies(1));

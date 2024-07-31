@@ -1,6 +1,6 @@
 import * as readlineSync from 'readline-sync';
 import { GameLibrary } from './GameLibrary';
-import { ElectronicGame, BoardGame } from './game';
+import { ElectronicGame, BoardGame } from './Game'
 
 function main(): void {
     const library: GameLibrary = new GameLibrary();
