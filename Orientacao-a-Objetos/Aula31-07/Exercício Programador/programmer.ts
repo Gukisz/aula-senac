@@ -27,7 +27,7 @@ class MidLevel extends Programmer {
 
     work(): string {
         return `${this.name} está criando features.`;
-    }
+    }   
 }
 
 class Senior extends Programmer {
