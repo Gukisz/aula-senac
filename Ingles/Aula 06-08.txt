@@ -1,0 +1,10 @@
+A database is used to store information in an organized manner, making it easy to access and get specific details when needed.
+
+the organizations and people improving business processes by analyzing data on sales, order processing, and customer service.
+
+1. Data Collection (a)
+2. Data Coding (f)
+3. Data Sorting (b)
+4. Data Entry (d)
+5. Data Validation (c)
+6. Data Tabulation (e)
