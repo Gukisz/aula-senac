@@ -13,9 +13,11 @@ class Data {
 }
 
 class Flight {
-    private seats: boolean[] = Array(100).fill(false);
+    private seats: boolean[];
 
-    constructor(private numeroVoo: string, private data: Data) {}
+    constructor(private flightNumber: string, private date: Data) {
+        this.seats = new Array(100).fill(false);
+    }
 
     nextFree(): number {
         for (let i = 0; i < this.seats.length; i++) {
@@ -26,11 +28,11 @@ class Flight {
         return -1;  // Retorna -1 se não tiver assentos liberados
     }
 
-    check(chair: number): boolean {
-        if (chair < 1 || chair > 100) {
+    check(seat: number): boolean {
+        if (seat < 1 || seat > 100) {
             throw new Error("Número de Assento invalido");
         }
-        return this.seats[chair - 1];
+        return this.seats[seat - 1];
     }
 
     occupies(seat: number): boolean {
@@ -48,34 +50,28 @@ class Flight {
         return this.seats.filter(seat => !seat).length;
     }
 
-    getFly(): string {
-        return this.numeroVoo;
+    getFlightNumber(): string {
+        return this.flightNumber;
     }
 
-    getData(): Data {
-        return this.data;
+    getDate(): Data {
+        return this.date;
     }
 
     clone(): Flight {
-        const clonedFlight = new Flight(this.numeroVoo, this.data);
+        const clonedFlight = new Flight(this.flightNumber, this.date);
         clonedFlight.seats = [...this.seats];
         return clonedFlight;        
     }
 }
 
-// Example usage
-const flightDate = new Data(2024, 31, 7, 17, 30);
+// Exemplo de uso sem o readline sync 
+const flightDate = new Data(2024, 7, 31, 10, 30);
 const flight = new Flight("A319", flightDate);
 
 console.log(flight.nextFree());  
 console.log(flight.occupies(1));
 console.log(flight.check(1));    
 console.log(flight.vacancies()); 
-console.log(flight.getFly());    
-console.log(flight.getData().toString());
-
-const clonedFlight = flight.clone();
-console.log(clonedFlight.getFly()); 
-console.log(clonedFlight.getData().toString()); 
-console.log(clonedFlight.check(1));
-console.log(clonedFlight.vacancies()); 
+console.log(flight.getFlightNumber());    
+console.log(flight.getDate().toString());
