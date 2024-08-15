@@ -40,14 +40,8 @@ export class Point2D {
     public toString(): string {
         return `x: ${this.x}, y: ${this.y}`;
     }
-
-    /*
-    A(x1, y1) B(x2, y2)
-
-    d = √((x2 - x1)² + (y2 - y1)²)
-    */
     
-    public distance(anotherPoint: Point2D): number {
+    public distance(anotherPoint: Point2D): number { 
         let xDiff = anotherPoint.getX() - this.x;
         let yDiff = anotherPoint.getY() - this.y;
         return Math.sqrt(xDiff ** 2 + yDiff ** 2); // usando o operador de exponenciação

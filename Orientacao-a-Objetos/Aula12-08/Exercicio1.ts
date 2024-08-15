@@ -9,8 +9,9 @@ class Counter {
         this.count = 0;
     }
 
+    //++ é igual a: Algum número + 1 / += é igual a: Algum numero + outro Numero.
     increment(): void{
-        this.count += 5;
+        this.count ++;
     }
 
     value(): number {
