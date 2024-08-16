@@ -337,3 +337,194 @@ MIN(salario) AS menor_salario
 FROM cargos
 GROUP BY departamento_id
 HAVING MIN(salario) > 2500.00;
+
+-------------------------------------------
+
+1) DELIMITER //
+
+CREATE PROCEDURE InserirEmpregado (
+    IN p_departamento_id INT,
+    IN p_nome VARCHAR(255),
+    IN p_titulo VARCHAR(255)
+)
+BEGIN
+    INSERT INTO empregados (departamento_id, nome, titulo)
+    VALUES (p_departamento_id, p_nome, p_titulo);
+END //
+
+DELIMITER ;
+
+
+
+2) DELIMITER //
+
+CREATE PROCEDURE ExcluirEmpregado (
+    IN p_empregados_id INT
+)
+BEGIN
+    DELETE FROM empregados
+    WHERE empregados_id = p_empregados_id;
+END //
+
+DELIMITER ;
+
+
+
+3) DELIMITER //
+
+CREATE PROCEDURE AtualizarTituloEmpregado (
+    IN p_empregados_id INT,
+    IN p_novo_titulo VARCHAR(255)
+)
+BEGIN
+    UPDATE empregados
+    SET titulo = p_novo_titulo
+    WHERE empregados_id = p_empregados_id;
+END //
+
+DELIMITER ;
+
+-----------------------------------------
+
+DELIMITER//
+
+CREATE FUNCTION CalcularSalarioBruto(
+    emp_id INT
+)
+RETURNS DECIMAL(10,2)
+BEGIN
+    DECLARE salario1 DECIMAL(10,2);
+
+    -- Obtém o salário do cargo do empregado com o ID fornecido
+    SELECT cargos.salario 
+    INTO salario1
+    FROM empregados
+    JOIN cargos ON empregados.titulo = cargos.titulo AND empregados.departamento_id = cargos.departamento_id
+    WHERE empregados.empregados_id = emp_id;
+
+    -- Retorna o salário
+    RETURN salario1;
+END //
+
+DELIMITER ;
+
+Para consultar:
+
+SELECT nome, CalcularSalarioBruto(empregados_id) AS salario_bruto
+FROM empregados
+WHERE empregados_id = 1;
+
+-----------------------------------------------
+
+1) DELIMITER //
+
+CREATE FUNCTION CalcularSalarioAnual (
+    p_cargos_id INT
+)
+RETURNS DECIMAL(10, 2) -- Especifica o tipo de dado que será retornado pela função.
+
+BEGIN
+    DECLARE salario_anual DECIMAL(10, 2); -- Declara uma variavel local.
+
+    SELECT salario * 12  -- Seleciona o salário multiplicado por 12.
+    INTO salario_anual -- Armazena o resultado na variavel.
+    FROM cargos -- Informa da onde é obtido os dados
+    WHERE cargos_id = p_cargos_id; -- Filtra o cargo baseado no cargos_id
+
+    RETURN salario_anual; -- Retorna o salario anual 
+END //
+
+DELIMITER ;
+
+SELECT CalcularSalarioAnual(1);
+
+2) DELIMITER //
+
+CREATE FUNCTION ContarEmpregadosDepartamento (
+    p_departamento_id INT
+)
+RETURNS INT
+
+BEGIN
+    DECLARE numero_empregados INT;
+
+    SELECT COUNT(*) -- Conta o número de registros (empregados) na tabela. pode ser usado também Empregados.nome ao inves de verificar todas as tabelas 
+    INTO numero_empregados
+    FROM empregados
+    WHERE departamento_id = p_departamento_id;
+
+    RETURN numero_empregados;
+END //
+
+DELIMITER ;
+
+SELECT ContarEmpregadosDepartamento(1);
+
+3) DELIMITER //
+
+CREATE FUNCTION ObterNomeDepartamento (
+    p_departamento_id INT
+)
+RETURNS VARCHAR(255)
+
+BEGIN
+    DECLARE nome_departamento VARCHAR(255);
+
+    SELECT nome
+    INTO nome_departamento
+    FROM departamentos
+    WHERE departamento_id = p_departamento_id;
+
+    RETURN nome_departamento;
+END //
+
+DELIMITER ;
+
+SELECT ObterNomeDepartamento(1);
+
+4) DELIMITER //
+
+CREATE FUNCTION ObterTituloEmpregado (
+    p_empregados_id INT
+)
+RETURNS VARCHAR(255)
+
+BEGIN
+    DECLARE titulo_empregado VARCHAR(255);
+
+    SELECT titulo
+    INTO titulo_empregado
+    FROM empregados
+    WHERE empregados_id = p_empregados_id;
+
+    RETURN titulo_empregado;
+END //
+
+DELIMITER ;
+
+SELECT ObterTituloEmpregado(1);
+
+5) DELIMITER //
+
+CREATE FUNCTION CalcularSalarioTotalDepartamento (
+    p_departamento_id INT
+)
+RETURNS DECIMAL(10, 2)
+
+BEGIN
+    DECLARE salario_total DECIMAL(10, 2);
+
+    SELECT SUM(salario) -- Calcula a soma dos salários dos cargos.
+    INTO salario_total
+    FROM cargos
+    WHERE departamento_id = p_departamento_id;
+
+    RETURN salario_total;
+END //
+
+DELIMITER ;
+
+SELECT CalcularSalarioTotalDepartamento(1);
+
+
+
