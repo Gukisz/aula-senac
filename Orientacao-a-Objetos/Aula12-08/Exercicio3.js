@@ -1,15 +1,17 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var rl = require("readline-sync");
 var ComplexNumber = /** @class */ (function () {
     function ComplexNumber(real, imaginary) {
         this._real = real;
         this._imaginary = imaginary;
     }
     Object.defineProperty(ComplexNumber.prototype, "real", {
-        // getters / setters
         get: function () {
             return this._real;
         },
         set: function (value) {
-            this.real = value;
+            this._real = value;
         },
         enumerable: false,
         configurable: true
@@ -24,7 +26,6 @@ var ComplexNumber = /** @class */ (function () {
         enumerable: false,
         configurable: true
     });
-    // metodo para adicionar 2 numeros complexos
     ComplexNumber.prototype.add = function (otherComplex) {
         var real = this._real + otherComplex.real;
         var imaginary = this._imaginary + otherComplex.imaginary;
@@ -46,31 +47,73 @@ var ComplexNumber = /** @class */ (function () {
         var imaginary = (this._imaginary * otherComplex.real - this._real * otherComplex.imaginary) / divisor;
         return new ComplexNumber(real, imaginary);
     };
-    // metodo para checar se os dois numeros complexos são iguais
     ComplexNumber.prototype.equals = function (otherComplex) {
         return this._real === otherComplex.real && this._imaginary === otherComplex.imaginary;
     };
-    // metodo para mostrar numeros complexos como string
     ComplexNumber.prototype.toString = function () {
         return "".concat(this._real, " + ").concat(this._imaginary, "i");
     };
-    // metodo para calcular o modulo dos numeros complexos math.sqrt é raiz quadrada é ** operador de exponenciação
     ComplexNumber.prototype.modulus = function () {
         return Math.sqrt(Math.pow(this._real, 2) + Math.pow(this._imaginary, 2));
     };
     return ComplexNumber;
 }());
-var complex1 = new ComplexNumber(3, 4);
-var complex2 = new ComplexNumber(1, 2);
-console.log('Numero Complexo 1:', complex1.toString());
-console.log('Numero Complexo 2:', complex2.toString());
-var sum = complex1.add(complex2);
-console.log('Soma:', sum.toString());
-var difference = complex1.subtract(complex2);
-console.log('Subtração:', difference.toString());
-var quotient = complex1.divide(complex2);
-console.log('Divisão:', quotient.toString());
-var product = complex1.multiply(complex2);
-console.log('Multiplicação:', product.toString());
-console.log('O primeiro numero complexo é igual ao segundo numero complexo??', complex1.equals(complex2));
-console.log('Módulo do numero complexo 1:', complex1.modulus());
+// Função para criar um novo número complexo
+function createComplexNumber() {
+    var real = rl.questionFloat('Digite a parte real: ');
+    var imaginary = rl.questionFloat('Digite a parte imaginária: ');
+    return new ComplexNumber(real, imaginary);
+}
+// Menu interativo
+var complex1 = createComplexNumber();
+var complex2 = createComplexNumber();
+var option;
+do {
+    console.log('\nEscolha uma opção:');
+    console.log('1 - Mostrar Complexo 1');
+    console.log('2 - Mostrar Complexo 2');
+    console.log('3 - Adicionar os números complexos');
+    console.log('4 - Subtrair o Complexo 2 do Complexo 1');
+    console.log('5 - Multiplicar os números complexos');
+    console.log('6 - Dividir o Complexo 1 pelo Complexo 2');
+    console.log('7 - Verificar se os números complexos são iguais');
+    console.log('8 - Calcular o módulo do Complexo 1');
+    console.log('9 - Sair');
+    option = rl.questionInt('Opção: ');
+    switch (option) {
+        case 1:
+            console.log('Complexo 1:', complex1.toString());
+            break;
+        case 2:
+            console.log('Complexo 2:', complex2.toString());
+            break;
+        case 3:
+            var sum = complex1.add(complex2);
+            console.log('Soma:', sum.toString());
+            break;
+        case 4:
+            var difference = complex1.subtract(complex2);
+            console.log('Subtração:', difference.toString());
+            break;
+        case 5:
+            var product = complex1.multiply(complex2);
+            console.log('Multiplicação:', product.toString());
+            break;
+        case 6:
+            var quotient = complex1.divide(complex2);
+            console.log('Divisão:', quotient.toString());
+            break;
+        case 7:
+            console.log('Os números complexos são iguais?', complex1.equals(complex2));
+            break;
+        case 8:
+            console.log('Módulo do Complexo 1:', complex1.modulus());
+            break;
+        case 9:
+            console.log('Saindo...');
+            break;
+        default:
+            console.log('Opção inválida! Tente novamente.');
+            break;
+    }
+} while (option !== 9);

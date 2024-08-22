@@ -1,37 +1,37 @@
-class ComplexNumber{
+import * as rl from 'readline-sync';
+
+class ComplexNumber {
     private _real: number;
     private _imaginary: number;
 
-    constructor(real: number, imaginary: number){
+    constructor(real: number, imaginary: number) {
         this._real = real;
         this._imaginary = imaginary;
     }
 
-// getters / setters
     get real(): number {
         return this._real;
     }
 
     set real(value: number) {
-        this.real = value;
+        this._real = value;
     }
 
     get imaginary(): number {
-        return this._imaginary;
+        return this._imaginary; 
     }
 
     set imaginary(value: number) {
         this._imaginary = value;
     }
 
-// metodo para adicionar 2 numeros complexos
-    add(otherComplex: ComplexNumber): ComplexNumber{
+    add(otherComplex: ComplexNumber): ComplexNumber {
         const real = this._real + otherComplex.real;
         const imaginary = this._imaginary + otherComplex.imaginary;
         return new ComplexNumber(real, imaginary);
     }
 
-    subtract(otherComplex: ComplexNumber): ComplexNumber{
+    subtract(otherComplex: ComplexNumber): ComplexNumber {
         const real = this._real - otherComplex.real;
         const imaginary = this._imaginary - otherComplex.imaginary;
         return new ComplexNumber(real, imaginary);
@@ -50,41 +50,80 @@ class ComplexNumber{
         return new ComplexNumber(real, imaginary);
     }
 
-    // metodo para checar se os dois numeros complexos são iguais
-    equals(otherComplex: ComplexNumber): boolean{
+    equals(otherComplex: ComplexNumber): boolean {
         return this._real === otherComplex.real && this._imaginary === otherComplex.imaginary;
     }
 
-    // metodo para mostrar numeros complexos como string
-
-    toString(): string{
+    toString(): string {
         return `${this._real} + ${this._imaginary}i`;
     }
 
-    // metodo para calcular o modulo dos numeros complexos math.sqrt é raiz quadrada é ** operador de exponenciação
-    modulus(): number{
+    modulus(): number {
         return Math.sqrt(this._real ** 2 + this._imaginary ** 2);
     }
 }
 
-const complex1 = new ComplexNumber(3, 4)
-const complex2 = new ComplexNumber(1, 2)
+// Função para criar um novo número complexo
+function createComplexNumber(): ComplexNumber {
+    const real = rl.questionFloat('Digite a parte real: ');
+    const imaginary = rl.questionFloat('Digite a parte imaginária: ');
+    return new ComplexNumber(real, imaginary);
+}
 
-console.log('Numero Complexo 1:', complex1.toString());
-console.log('Numero Complexo 2:', complex2.toString());
+// Menu interativo
+let complex1 = createComplexNumber();
+let complex2 = createComplexNumber();
 
-const sum = complex1.add(complex2);
-console.log('Soma:', sum.toString());
+let option: number;
 
-const difference = complex1.subtract(complex2);
-console.log('Subtração:', difference.toString()); 
+do {
+    console.log('\nEscolha uma opção:');
+    console.log('1 - Mostrar Complexo 1');
+    console.log('2 - Mostrar Complexo 2');
+    console.log('3 - Adicionar os números complexos');
+    console.log('4 - Subtrair o Complexo 2 do Complexo 1');
+    console.log('5 - Multiplicar os números complexos');
+    console.log('6 - Dividir o Complexo 1 pelo Complexo 2');
+    console.log('7 - Verificar se os números complexos são iguais');
+    console.log('8 - Calcular o módulo do Complexo 1');
+    console.log('9 - Sair');
+    
+    option = rl.questionInt('Opção: ');
 
-const quotient = complex1.divide(complex2);
-console.log('Divisão:', quotient.toString());
-
-const product = complex1.multiply(complex2);
-console.log('Multiplicação:', product.toString()); 
-
-console.log('O primeiro numero complexo é igual ao segundo numero complexo??', complex1.equals(complex2)); 
-
-console.log('Módulo do numero complexo 1:', complex1.modulus()); 
+    switch (option) {
+        case 1:
+            console.log('Complexo 1:', complex1.toString());
+            break;
+        case 2:
+            console.log('Complexo 2:', complex2.toString());
+            break;
+        case 3:
+            const sum = complex1.add(complex2);
+            console.log('Soma:', sum.toString());
+            break;
+        case 4:
+            const difference = complex1.subtract(complex2);
+            console.log('Subtração:', difference.toString());
+            break;
+        case 5:
+            const product = complex1.multiply(complex2);
+            console.log('Multiplicação:', product.toString());
+            break;
+        case 6:
+            const quotient = complex1.divide(complex2);
+            console.log('Divisão:', quotient.toString());
+            break;
+        case 7:
+            console.log('Os números complexos são iguais?', complex1.equals(complex2));
+            break;
+        case 8:
+            console.log('Módulo do Complexo 1:', complex1.modulus());
+            break;
+        case 9:
+            console.log('Saindo...');
+            break;
+        default:
+            console.log('Opção inválida! Tente novamente.');
+            break;
+    }
+} while (option !== 9);
