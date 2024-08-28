@@ -1,0 +1,92 @@
+Party Planner LTD is a limited liability company (LTD) specializing in planning and organizing events and parties. 
+
+Human Resources (HR):
+
+Personal Data: Manages CVs, job descriptions, employees' personal data, training and vacations. This department takes care of recruitment, development and employee welfare.
+
+Customer Service/Marketing:
+
+Customer Data: Involves customer contacts, satisfaction surveys and promotions. This department probably deals with communication with customers, marketing campaigns, and measuring customer satisfaction to improve services.
+
+Logistics:
+
+Product Data: Includes inventory, purchasing needs and returned products. This department manages the stock of products, purchases of materials needed for events and the processing of returns if necessary.
+
+Technical/IT Support:
+
+Technical Data: Covers contact with the help desk, helpdesk reports, troubleshooting manuals and service reports. This department provides technical support, resolves problems that may arise and keeps the company's technical infrastructure running.
+
+---------------------------------------------------------
+
+Advantages of a Computerized Database:
+Efficiency and Speed:
+
+Computerized databases allow fast and efficient access to information, making it easier to search, query and update data in real time.
+Accuracy and Error Reduction:
+
+Process automation minimizes human error, ensuring that data is more accurate and consistent.
+Security and Access Control:
+
+Data can be protected by passwords and encryption, with access control limited to authorized users, reducing the risk of unauthorized access or data loss.
+
+Disadvantages of a Computerized Database:
+Initial Cost and Maintenance:
+
+Implementing a computerized database can require a high initial investment in hardware, software and training. In addition, there are ongoing maintenance and upgrade costs.
+Dependence on Technology:
+
+Technical problems, such as system failures or power outages, can result in downtime, making it difficult to access data.
+Security and Privacy:
+
+Although data can be protected, there is still the risk of cyber attacks, information leaks or security breaches.
+Complexity:
+
+Setting up and maintaining a database can be complex, requiring technical expertise that may not be available internally within the company.
+
+-----------------------------------------------------------------
+
+What types of information does Jumbo Book Store communicate between its employees?
+The Jumbo Book Store communicates handwritten sales reports among employees. These reports are used to track daily sales.
+
+How do the employees exchange information in the company?
+The employees prepare handwritten sales reports and give them to the manager, Amiki Sukhon, who then compiles the data.
+
+What documents does Amiki prepare?
+Amiki prepares purchase orders for new books, sales reports for the owner and customer information for the marketing department.
+
+How much time does it take to compile the data?
+It takes 5 to 6 hours a day to compile sales data.
+
+----------------------------------------------------------------
+PROBLEM
+Who?
+Amiki Sukhon, store manager, store staff, customers, marketing team.
+
+What?
+Difficulty in tracking sales due to the use of handwritten sales reports.
+It takes 5-6 hours to compile sales data on a daily basis.
+Problems creating purchase orders and communicating sales information to the owner and marketing team.
+Customer complaints about the lack of adequate information about the availability of books and stationery in the warehouse.
+
+Why?
+Manual processes take up excessive time, causing inefficiency and delays.
+Lack of accurate and up-to-date information can result in incorrect orders and lost sales.
+Customer dissatisfaction due to a lack of information can negatively affect the company's reputation.
+
+Why do the customers complain?
+Customers complain about the lack of accurate information about the availability of books and stationery in the warehouse.
+
+SOLUTIONS
+
+Implement a digital sales management system to replace handwritten reports.
+Automate the process of compiling sales data to reduce the time needed to generate daily reports.
+Integrate a real-time inventory system that allows customers and staff to access up-to-date information on the products available in the warehouse.
+Train staff in the use of new technologies to ensure a smooth transition and improve operational efficiency.
+
+END RESULTS 
+
+Significant reduction in the time needed to compile and process sales data.
+Improved accuracy of purchase orders and sales reports.
+Increased customer satisfaction due to access to up-to-date and accurate information.
+More efficient operations and improved communication between stores and the main office.
+
