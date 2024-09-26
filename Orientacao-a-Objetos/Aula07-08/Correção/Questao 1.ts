@@ -1,7 +1,6 @@
 let reader = require("readline-sync")
 
 export interface Aluno {
-    constructor(matricula: number, nome: string, notaProva1: number, notaProva2: number, notaTrabalho: number);
     //media se refere a media das notas das provas
     media(): number;
     //final se refere a media das provas e do trabalho
