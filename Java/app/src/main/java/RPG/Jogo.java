@@ -22,20 +22,21 @@ public class Jogo {
         System.out.println("3) Arqueiro");
 
         int escolhaClasse = scanner.nextInt();
-        Personagem jogador;
+        Personagem jogador = null; 
 
         switch (escolhaClasse) {
             case 1:
-                jogador = new Guerreiro(nome, Dados.rolar(6), Dados.rolar(12), Dados.rolar(8));
+                jogador = new Guerreiro(nome, Dados.rolar(6), Dados.rolar(12), Dados.rolar(10) + 10);
                 break;
             case 2:
-                jogador = new Mago(nome, Dados.rolar(4), Dados.rolar(10), Dados.rolar(12));
+                jogador = new Mago(nome, Dados.rolar(4), Dados.rolar(10), Dados.rolar(10) + 10);
                 break;
             case 3:
-                jogador = new Arqueiro(nome, Dados.rolar(5), Dados.rolar(8), Dados.rolar(10));
+                jogador = new Arqueiro(nome, Dados.rolar(6), Dados.rolar(10), Dados.rolar(10) + 10);
                 break;
             default:
-                jogador = new Guerreiro(nome, Dados.rolar(6), Dados.rolar(12), Dados.rolar(8)); // Ajuste no construtor
+                System.out.println("Opção inválida. Guerreiro selecionado por padrão.");
+                jogador = new Guerreiro(nome, Dados.rolar(6), Dados.rolar(12), Dados.rolar(10) + 10);
         }
 
         System.out.println("\nSua jornada começa na pequena aldeia de Eldoria, rodeada por vastas florestas e montanhas sombrias.");

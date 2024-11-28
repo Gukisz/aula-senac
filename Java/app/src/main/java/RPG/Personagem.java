@@ -7,5 +7,3 @@ public interface Personagem {
     boolean estaVivo();
     int getVida();
 }
-
-
