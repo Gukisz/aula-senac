@@ -4,7 +4,7 @@ import java.util.Scanner;
 interface Produto {
     String getNome();
     double getPreco();
-    String toString(); // método já existe em Object mas pode ser sobrescrito
+    String toString(); // método já existe em Object 
 }
 
 // classes que estao implementando a interface Produto
